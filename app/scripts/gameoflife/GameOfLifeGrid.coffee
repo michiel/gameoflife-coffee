@@ -40,11 +40,7 @@ class GameOfLifeGrid
         count
 
     _cycle : ()->
-        @oldGrid = []
-        @grid.forEach (column, x)=>
-            @oldGrid.push []
-            column.forEach (row, y)=>
-                @oldGrid[x].push @grid[x][y]
+        @oldGrid = @cloneGrid @grid
 
         @oldGrid.forEach (column, x)=>
             column.forEach (row, y)=>
