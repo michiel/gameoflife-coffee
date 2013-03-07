@@ -6,7 +6,10 @@ class GameOfLifeGrid
     constructor : (args = {})->
         @height = args.height or 40
         @width  = args.width or 40
-        @grid   = args.grid or @initGrid()
+        if args.grid?
+          @grid = @cloneGrid(args.grid)
+        else
+          @grid = @initGrid()
 
     initGrid : ()->
         [1..@width].map =>
