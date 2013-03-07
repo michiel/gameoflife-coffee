@@ -1,12 +1,12 @@
 class GameOfLifeGrid
 
     grid    : []
-    oldGrid : []
+    lastGrid : []
 
     constructor : (args = {})->
         @height = args.height or 40
         @width  = args.width or 40
-        @grid = @initGrid()
+        @grid   = @initGrid()
 
     initGrid : ()->
         [1..@width].map ()=>
@@ -19,8 +19,8 @@ class GameOfLifeGrid
                 val
 
     _cellStatus : (x, y)->
-        if @oldGrid[x] and @oldGrid[x][y]
-            return @oldGrid[x][y]
+        if @lastGrid[x] and @lastGrid[x][y]
+            return @lastGrid[x][y]
         else
             return 'dead'
 
@@ -40,12 +40,12 @@ class GameOfLifeGrid
         count
 
     _cycle : ()->
-        @oldGrid = @cloneGrid @grid
+        @lastGrid = @cloneGrid @grid
 
-        @oldGrid.forEach (column, x)=>
+        @lastGrid.forEach (column, x)=>
             column.forEach (row, y)=>
                 locals = @_neighbours x, y
-                switch @oldGrid[x][y]
+                switch @lastGrid[x][y]
                     when 'alive'
                         if locals.alive < 2 or locals.alive > 3
                             @grid[x][y] = 'dead'
