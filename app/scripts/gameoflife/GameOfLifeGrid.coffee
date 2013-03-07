@@ -1,6 +1,6 @@
 class GameOfLifeGrid
 
-    grid    : []
+    grid     : []
     lastGrid : []
 
     constructor : (args = {})->
@@ -40,9 +40,7 @@ class GameOfLifeGrid
         count
 
     _cycle : ()->
-        @lastGrid = @cloneGrid @grid
-
-        @lastGrid.forEach (column, x)=>
+        (@lastGrid = @cloneGrid @grid).forEach (column, x)=>
             column.forEach (row, y)=>
                 locals = @_neighbours x, y
                 switch @lastGrid[x][y]

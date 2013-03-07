@@ -1,9 +1,10 @@
 $ ()->
 
   window.board = new GameOfLifeBoard
-    height : 10
+    height : 15
+    width  : 15
 
-  board.grid.randomize()
+  board.randomize()
 
   run = ()->
     board.printBoard()
