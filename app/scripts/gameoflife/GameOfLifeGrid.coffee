@@ -23,9 +23,9 @@ class GameOfLifeGrid
 
     _cellStatus : (x, y)->
         if @lastGrid[x] and @lastGrid[x][y]
-            return @lastGrid[x][y]
+            @lastGrid[x][y]
         else
-            return 'dead'
+            'dead'
 
     _neighbours : (x, y)->
         count =
