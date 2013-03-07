@@ -34,6 +34,15 @@
   <script>
   // replace this by your own specs
   (function() {
+
+    var liveGrid = [
+      ['alive', 'alive', 'alive', 'alive', 'alive'],
+      ['alive', 'alive', 'alive', 'alive', 'alive'],
+      ['alive', 'alive', 'alive', 'alive', 'alive'],
+      ['alive', 'alive', 'alive', 'alive', 'alive'],
+      ['alive', 'alive', 'alive', 'alive', 'alive']
+    ];
+
     describe('Game of Life Grid', function() {
       describe('Initialization', function() {
 
@@ -62,13 +71,7 @@
           var grid = new GameOfLifeGrid({
             height : 5,
             width  : 5,
-            grid   : [
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive']
-            ]
+            grid   : liveGrid
           });
           var g = grid.grid;
           assert.equal(g[4][4], 'alive');
@@ -82,13 +85,7 @@
           var grid = new GameOfLifeGrid({
             height : 5,
             width  : 5,
-            grid   : [
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive'],
-              ['alive', 'alive', 'alive', 'alive', 'alive']
-            ]
+            grid   : liveGrid
           });
           var g = grid.grid;
 
