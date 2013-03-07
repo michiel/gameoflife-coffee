@@ -6,10 +6,10 @@ class GameOfLifeGrid
     constructor : (args = {})->
         @height = args.height or 40
         @width  = args.width or 40
-        @grid   = @initGrid()
+        @grid   = args.grid or @initGrid()
 
     initGrid : ()->
-        [1..@width].map ()=>
+        [1..@width].map =>
             [1..@height].map =>
                 'dead'
 
@@ -33,7 +33,7 @@ class GameOfLifeGrid
 
         range.forEach (i)=>
             range.forEach (j)=>
-                if not (i isnt 0 and j is i)
+                if not (i is 0 and j is i)
                     switch @_cellStatus(x+i, y+j)
                         when 'alive' then count.alive++
                         when 'dead' then count.dead++
