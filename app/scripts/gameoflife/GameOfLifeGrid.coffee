@@ -48,10 +48,10 @@ class GameOfLifeGrid
                 switch @oldGrid[x][y]
                     when 'alive'
                         if locals.alive < 2 or locals.alive > 3
-                            @grid[x][y] = "dead"
+                            @grid[x][y] = 'dead'
                     when 'dead'
                         if locals.alive is 3
-                            @grid[x][y] = "alive"
+                            @grid[x][y] = 'alive'
 
     randomize : ()->
         @grid.forEach (row, x)=>
