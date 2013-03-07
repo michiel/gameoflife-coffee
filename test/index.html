@@ -75,6 +75,30 @@
         });
 
       });
+
+      describe('Cycles', function() {
+
+        it('should have a dead cell after two cycles', function() {
+          var grid = new GameOfLifeGrid({
+            height : 5,
+            width  : 5,
+            grid   : [
+              ['alive', 'alive', 'alive', 'alive', 'alive'],
+              ['alive', 'alive', 'alive', 'alive', 'alive'],
+              ['alive', 'alive', 'alive', 'alive', 'alive'],
+              ['alive', 'alive', 'alive', 'alive', 'alive'],
+              ['alive', 'alive', 'alive', 'alive', 'alive']
+            ]
+          });
+          var g = grid.grid;
+
+          grid.cycle();
+          assert.equal(g[4][4], 'alive');
+
+          grid.cycle();
+          assert.equal(g[4][4], 'dead');
+        });
+      });
     });
   })();
   </script>
