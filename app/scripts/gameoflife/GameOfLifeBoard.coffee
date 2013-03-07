@@ -1,11 +1,7 @@
 class GameOfLifeBoard
 
     constructor : (args = {})->
-        @height = args.height or 40
-        @width  = args.width or 40
-        @grid = new GameOfLifeGrid
-            height : @height
-            width  : @width
+        @grid = new GameOfLifeGrid args
             
     cycle : ()->
         @grid.cycle()
@@ -16,9 +12,11 @@ class GameOfLifeBoard
         @_boardBuffer += str
 
     printBoard : ()->
-        width  = [0..@width-1]
-        height = [0..@height-1]
+        width  = [0..@grid.width-1]
+        height = [0..@grid.height-1]
         board  = @grid.grid
+
+        @_boardBuffer = ""
 
         width.forEach ()=>
             @_print "-"
