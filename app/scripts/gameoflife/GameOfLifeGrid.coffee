@@ -54,12 +54,12 @@ class GameOfLifeGrid
                             @grid[x][y] = 'alive'
 
     randomize : ()->
-        @grid.forEach (row, x)=>
-            row.forEach (column, y)=>
+        @grid = @grid.map (row)->
+            row.map ()->
                 if Math.floor((Math.random() * 10)) % 3 is 0
-                    @grid[x][y] = 'alive'
+                    'alive'
                 else
-                    @grid[x][y] = 'dead'
+                    'dead'
 
     cycle : ()->
         @_cycle()
