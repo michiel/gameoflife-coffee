@@ -1,44 +1,44 @@
 class GameOfLifeBoard
 
-    constructor : (args = {})->
-        @grid = new GameOfLifeGrid args
-            
-    cycle : ()->
-        @grid.cycle()
+  constructor : (args = {})->
+    @grid = new GameOfLifeGrid args
+      
+  cycle : ()->
+    @grid.cycle()
 
-    randomize : ()->
-        @grid.randomize()
+  randomize : ()->
+    @grid.randomize()
 
-    _boardBuffer : ""
+  _boardBuffer : ""
 
-    _print : (str)->
-        @_boardBuffer += str
+  _print : (str)->
+    @_boardBuffer += str
 
-    printBoard : ()->
-        width  = [0..@grid.width+1]
-        height = [0..@grid.height-1]
-        board  = @grid.grid
+  printBoard : ()->
+    width = [0..@grid.width+1]
+    height = [0..@grid.height-1]
+    board = @grid.grid
 
-        @_boardBuffer = ""
+    @_boardBuffer = ""
 
-        width.forEach ()=>
-            @_print "-"
+    width.forEach ()=>
+      @_print "-"
 
-        @_print "\n"
+    @_print "\n"
 
-        board.forEach (val, i)=>
-            @_print "|"
-            board[i].forEach (val, j)=>
-                if val is "alive"
-                    @_print "X"
-                else
-                    @_print "."
-            @_print "|\n"
+    board.forEach (val, i)=>
+      @_print "|"
+      board[i].forEach (val, j)=>
+        if val is "alive"
+          @_print "X"
+        else
+          @_print "."
+      @_print "|\n"
 
-        width.forEach ()=>
-            @_print "-"
+    width.forEach ()=>
+      @_print "-"
 
-        @_print "\n"
+    @_print "\n"
 
 
 window.GameOfLifeBoard = GameOfLifeBoard
