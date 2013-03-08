@@ -7,19 +7,19 @@ var liveGrid = [
 ];
 
 var oscillatorGrid = [
-  ['alive', 'alive', 'alive', 'alive', 'alive'],
-  ['alive', 'alive', 'alive', 'alive', 'alive'],
-  ['alive', 'dead',  'dead',  'dead',  'alive'],
-  ['alive', 'alive', 'alive', 'alive', 'alive'],
-  ['alive', 'alive', 'alive', 'alive', 'alive']
+  ['dead',  'dead',  'dead',  'dead',  'dead'],
+  ['dead',  'dead',  'dead',  'dead',  'dead'],
+  ['dead',  'alive', 'alive', 'alive', 'dead'],
+  ['dead',  'dead',  'dead',  'dead',  'dead'],
+  ['dead',  'dead',  'dead',  'dead',  'dead']
 ];
 
 var stillGrid = [
-  ['alive', 'alive', 'alive', 'alive', 'alive'],
-  ['alive', 'dead',  'dead',  'alive', 'alive'],
-  ['alive', 'dead',  'dead', 'alive', 'alive'],
-  ['alive', 'alive', 'alive', 'alive', 'alive'],
-  ['alive', 'alive', 'alive', 'alive', 'alive']
+  ['dead',  'dead',  'dead',  'dead',  'dead'],
+  ['dead',  'alive', 'alive', 'dead',  'dead'],
+  ['dead',  'alive', 'alive', 'dead',  'dead'],
+  ['dead',  'dead',  'dead',  'dead',  'dead'],
+  ['dead',  'dead',  'dead',  'dead',  'dead']
 ];
 
 describe('Cycles', function() {
@@ -51,7 +51,7 @@ describe('Cycles', function() {
     assert.equal(g[2][1], 'dead');
 
     grid.cycle();
-    assert.equal(g[2][1], 'dead');
+    assert.equal(g[2][1], 'alive');
 
     grid.cycle();
     assert.equal(g[2][1], 'dead');
@@ -66,13 +66,13 @@ describe('Cycles', function() {
     var g = grid.grid;
 
     grid.cycle();
-    assert.equal(g[2][1], 'dead');
+    assert.equal(g[2][1], 'alive');
 
     grid.cycle();
-    assert.equal(g[2][1], 'dead');
+    assert.equal(g[2][1], 'alive');
 
     grid.cycle();
-    assert.equal(g[2][1], 'dead');
+    assert.equal(g[2][1], 'alive');
   });
 
 });
