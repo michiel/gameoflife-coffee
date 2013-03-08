@@ -8,15 +8,15 @@
     "curly": true,
     "eqeqeq": true,
     "immed": true,
-    "indent": 4,
+    "indent": 2,
     "latedef": true,
     "newcap": true,
     "noarg": true,
     "quotmark": "single",
     "regexp": true,
-    "undef": true,
+    "undef": false,
     "unused": true,
-    "strict": true,
+    "strict": false,
     "trailing": true,
     "smarttabs": true
 }
