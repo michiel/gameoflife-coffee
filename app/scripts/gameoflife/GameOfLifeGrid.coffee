@@ -22,10 +22,17 @@ class GameOfLifeGrid
                 val
 
     _cellStatus : (x, y)->
-        if @lastGrid[x] and @lastGrid[x][y]
-            @lastGrid[x][y]
-        else
-            'dead'
+        if x is -1
+          x = @height - 1
+        else if x is @height
+          x = 0
+
+        if y is -1
+          y = @height - 1
+        else if y is @height
+          y = 0
+
+        @lastGrid[x][y]
 
     _neighbours : (x, y)->
         count =
