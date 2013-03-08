@@ -7,9 +7,9 @@ class GameOfLifeGrid
         @height = args.height or 40
         @width  = args.width or 40
         if args.grid?
-          @grid = @cloneGrid(args.grid)
+            @grid = @cloneGrid(args.grid)
         else
-          @grid = @initGrid()
+            @grid = @initGrid()
 
     initGrid : ()->
         [1..@width].map =>
@@ -23,14 +23,14 @@ class GameOfLifeGrid
 
     _cellStatus : (x, y)->
         if x is -1
-          x = @width - 1
+            x = @width - 1
         else if x is @width
-          x = 0
+            x = 0
 
         if y is -1
-          y = @height - 1
+            y = @height - 1
         else if y is @height
-          y = 0
+            y = 0
 
         @lastGrid[x][y]
 

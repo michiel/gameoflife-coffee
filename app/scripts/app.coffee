@@ -1,17 +1,17 @@
 $ ()->
 
-  window.board = new GameOfLifeBoard
-    height : 15
-    width  : 15
+    board = new GameOfLifeBoard
+        height : 15
+        width  : 15
 
-  board.randomize()
+    board.randomize()
 
-  run = ()->
-    board.printBoard()
-    board.cycle()
+    run = ()->
+        board.printBoard()
+        board.cycle()
 
-    $("#gameoflife").html "<pre>#{board._boardBuffer}</pre>"
+        $("#gameoflife").html "<pre>#{board._boardBuffer}</pre>"
 
-  setInterval run, 1000
+    setInterval run, 100
 
 
