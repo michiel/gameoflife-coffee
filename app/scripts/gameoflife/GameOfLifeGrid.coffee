@@ -1,10 +1,10 @@
 class GameOfLifeGrid
 
-  grid   : []
+  grid     : []
   lastGrid : []
 
   constructor : (args = {})->
-    @width = args.width or 40
+    @width  = args.width or 40
     @height = args.height or 40
     if args.grid?
       @grid = @cloneGrid(args.grid)
@@ -36,7 +36,7 @@ class GameOfLifeGrid
 
   _neighbours : (x, y)->
     count =
-      dead : 0
+      dead  : 0
       alive : 0
 
     range = [-1..1]

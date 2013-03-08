@@ -15,9 +15,9 @@ class GameOfLifeBoard
     @_boardBuffer += str
 
   printBoard : ()->
-    width = [0..@grid.width+1]
+    width  = [0..@grid.width+1]
     height = [0..@grid.height-1]
-    board = @grid.grid
+    board  = @grid.grid
 
     @_boardBuffer = ""
 
