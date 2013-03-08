@@ -4,16 +4,16 @@ class GameOfLifeGrid
     lastGrid : []
 
     constructor : (args = {})->
-        @height = args.height or 40
         @width  = args.width or 40
+        @height = args.height or 40
         if args.grid?
             @grid = @cloneGrid(args.grid)
         else
             @grid = @initGrid()
 
     initGrid : ()->
-        [1..@width].map =>
-            [1..@height].map =>
+        [1..@height].map =>
+            [1..@width].map =>
                 'dead'
 
     cloneGrid : (grid)->
@@ -23,13 +23,13 @@ class GameOfLifeGrid
 
     _cellStatus : (x, y)->
         if x is -1
-            x = @width - 1
-        else if x is @width
+            x = @height - 1
+        else if x is @height
             x = 0
 
         if y is -1
-            y = @height - 1
-        else if y is @height
+            y = @width - 1
+        else if y is @width
             y = 0
 
         @lastGrid[x][y]

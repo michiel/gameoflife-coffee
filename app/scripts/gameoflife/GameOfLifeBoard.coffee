@@ -26,7 +26,7 @@ class GameOfLifeBoard
 
         @_print "\n"
 
-        height.forEach (val, i)=>
+        board.forEach (val, i)=>
             @_print "|"
             board[i].forEach (val, j)=>
                 if val is "alive"
