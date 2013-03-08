@@ -23,8 +23,8 @@ class GameOfLifeGrid
 
     _cellStatus : (x, y)->
         if x is -1
-          x = @height - 1
-        else if x is @height
+          x = @width - 1
+        else if x is @width
           x = 0
 
         if y is -1
