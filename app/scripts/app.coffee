@@ -1,6 +1,6 @@
 $ ()->
 
-  board = new GameOfLifeBoard
+  board = new GameOfLifeText
     height : 35
     width  : 85
 

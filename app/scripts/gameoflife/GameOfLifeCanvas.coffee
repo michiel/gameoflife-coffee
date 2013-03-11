@@ -1,0 +1,3 @@
+class GameOfLifeCanvas extends GameOfLifeBoard
+
+
