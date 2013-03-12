@@ -15,4 +15,5 @@ Use yeoman / grunt to build
  * $ yeoman build
  * $ yeoman test
 
+Wikipedia has a nice [entry on Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
