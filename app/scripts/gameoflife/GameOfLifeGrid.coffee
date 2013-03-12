@@ -21,20 +21,24 @@ class GameOfLifeGrid
       col.map (val) ->
         val
 
-  _cellStatus : (x, y)->
-    if x is -1
-      x = @height - 1
-    else if x is @height
-      x = 0
-
-    if y is -1
-      y = @width - 1
-    else if y is @width
-      y = 0
-
-    @lastGrid[x][y]
-
   _neighbours : (x, y)->
+
+    height = @height
+    width  = @width
+    grid   = @lastGrid
+
+    cellStatus = (x, y)=>
+      if x is -1
+        x = height - 1
+      else if x is height
+        x = 0
+
+      if y is -1
+        y = width - 1
+      else if y is width
+        y = 0
+
+      grid[x][y]
 
     #
     # Inline JS for speed - All CS loops/iterations require new function
@@ -46,7 +50,7 @@ class GameOfLifeGrid
     `for (var i=-1;i<2;i++) {
       for (var j=-1;j<2;j++) {
         if (!(i == 0 && j == 0)) {
-          if (this._cellStatus(x+i, y+j) === 'alive') {
+          if (cellStatus(x+i, y+j) === 'alive') {
             count++;
           }
         }
