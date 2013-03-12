@@ -35,31 +35,26 @@ class GameOfLifeGrid
     @lastGrid[x][y]
 
   _neighbours : (x, y)->
-    count =
-      dead  : 0
-      alive : 0
-
+    count = 0
     range = [-1..1]
 
     range.forEach (i)=>
       range.forEach (j)=>
         if not (i is 0 and j is i)
-          switch @_cellStatus(x+i, y+j)
-            when 'alive' then count.alive++
-            when 'dead' then count.dead++
+          if @_cellStatus(x+i, y+j) is 'alive'
+            count++
     count
 
   _cycle : ()->
     (@lastGrid = @cloneGrid @grid).forEach (column, x)=>
       column.forEach (row, y)=>
-        locals = @_neighbours x, y
-        switch @lastGrid[x][y]
-          when 'alive'
-            if locals.alive < 2 or locals.alive > 3
-              @grid[x][y] = 'dead'
-          when 'dead'
-            if locals.alive is 3
-              @grid[x][y] = 'alive'
+        alive = @_neighbours x, y
+        if @lastGrid[x][y] is 'alive'
+          if alive < 2 or alive > 3
+            @grid[x][y] = 'dead'
+        else
+          if alive is 3
+            @grid[x][y] = 'alive'
 
   randomize : ()->
     @grid = @grid.map (row)->
