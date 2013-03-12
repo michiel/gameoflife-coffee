@@ -23,6 +23,12 @@ class GameOfLifeGrid
 
   _neighbours : (x, y)->
 
+    #
+    # Inline the cellStatus() function for performance
+    # Mostly for placing this vars in manageable scope
+    # TODO : additionale measurement
+    #
+
     height = @height
     width  = @width
     grid   = @lastGrid
