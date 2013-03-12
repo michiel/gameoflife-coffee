@@ -13,14 +13,17 @@ class GameOfLifeRaphael extends GameOfLifeBoard
 
     @cells = @grid.grid.map (row, x)=>
       row.map (val, y)=>
-        @paper.circle x * @size + @radius, y * @size + @radius , @radius
+        circle = @paper.circle x * @size + @radius,
+          y * @size + @radius,
+          @radius
+        circle.attr 'stroke', '#000'
 
   printBoard : ()->
     @grid.grid.forEach (row, x)=>
       row.forEach (val, y)=>
-        @cells[x][y].attr
+        @cells[x][y].animate
           'fill' : @colors[val]
-          'stroke' : "#000"
+        , 200
 
 
 window.GameOfLifeRaphael = GameOfLifeRaphael
