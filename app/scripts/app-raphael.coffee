@@ -2,8 +2,8 @@
 $ ()->
 
   board = new GameOfLifeRaphael
-    height : 50
-    width  : 50
+    height : 25
+    width  : 25
     node   : $ "#gameoflife"
 
   window.board = board
