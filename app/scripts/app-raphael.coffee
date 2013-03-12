@@ -2,7 +2,7 @@
 $ ()->
 
   board = new GameOfLifeRaphael
-    height : 25
+    height : 50
     width  : 25
     node   : $ "#gameoflife"
 
@@ -13,7 +13,7 @@ $ ()->
   run = ()->
     board.printBoard()
     board.cycle()
-    setTimeout run, 300
+    setTimeout run, 500
 
   run()
 
