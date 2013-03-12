@@ -11,7 +11,7 @@ $ ()->
     board.cycle()
 
     $("#gameoflife").html "<pre>#{board._boardBuffer}</pre>"
+    setTimeout run, 200
 
-  setInterval run, 200
-
+  run()
 
