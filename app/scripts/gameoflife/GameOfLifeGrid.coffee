@@ -35,14 +35,24 @@ class GameOfLifeGrid
     @lastGrid[x][y]
 
   _neighbours : (x, y)->
-    count = 0
-    range = [-1..1]
 
-    range.forEach (i)=>
-      range.forEach (j)=>
-        if not (i is 0 and j is i)
-          if @_cellStatus(x+i, y+j) is 'alive'
-            count++
+    #
+    # Inline JS for speed - All CS loops/iterations require new function
+    # scopes and those are seriously _expensive_
+    #
+
+    count = 0
+
+    `for (var i=-1;i<2;i++) {
+      for (var j=-1;j<2;j++) {
+        if (!(i == 0 && j == 0)) {
+          if (this._cellStatus(x+i, y+j) === 'alive') {
+            count++;
+          }
+        }
+      }
+    }`
+
     count
 
   _cycle : ()->
