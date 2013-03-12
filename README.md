@@ -1,6 +1,7 @@
 # Game of Life
 
-Conway's Game of Life in CoffeeScript
+Conway's Game of Life in CoffeeScript with various frontends (text, Canvas and
+RaphaelJS so far) and tests.
 
 Very much a work in progress
 
