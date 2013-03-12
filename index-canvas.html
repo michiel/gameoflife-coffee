@@ -14,15 +14,22 @@
         <script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>
 
         <script src="scripts/9b096ff7.utils.js"></script>
+        <style>
+          #gameoflife {
+            border : 1px dashed #000;
+          }
+        </style>
     </head>
     <body>
       <div class="container">
         <center>
           <div class="hero-unit">
-            Conway's Game of Life
+            Conway's Game of Life (canvas)
           </div>
-          <div id="gameoflife">
-          </div>
+
+          <canvas id="gameoflife" style="width:90%">
+          Your browser doesn't support the CANVAS tag
+          </canvas>
         </center>
       </div>
 

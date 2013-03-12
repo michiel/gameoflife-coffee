@@ -1,30 +1,23 @@
 (function() {
-  var GameOfLifeBoard;
+  var GameOfLifeText,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  GameOfLifeBoard = (function() {
+  GameOfLifeText = (function(_super) {
 
-    function GameOfLifeBoard(args) {
-      if (args == null) {
-        args = {};
-      }
-      this.grid = new GameOfLifeGrid(args);
+    __extends(GameOfLifeText, _super);
+
+    function GameOfLifeText() {
+      return GameOfLifeText.__super__.constructor.apply(this, arguments);
     }
 
-    GameOfLifeBoard.prototype.cycle = function() {
-      return this.grid.cycle();
-    };
+    GameOfLifeText.prototype._boardBuffer = "";
 
-    GameOfLifeBoard.prototype.randomize = function() {
-      return this.grid.randomize();
-    };
-
-    GameOfLifeBoard.prototype._boardBuffer = "";
-
-    GameOfLifeBoard.prototype._print = function(str) {
+    GameOfLifeText.prototype._print = function(str) {
       return this._boardBuffer += str;
     };
 
-    GameOfLifeBoard.prototype.printBoard = function() {
+    GameOfLifeText.prototype.printBoard = function() {
       var board, height, width, _i, _j, _ref, _ref1, _results, _results1,
         _this = this;
       width = (function() {
@@ -60,10 +53,10 @@
       return this._print("\n");
     };
 
-    return GameOfLifeBoard;
+    return GameOfLifeText;
 
-  })();
+  })(GameOfLifeBoard);
 
-  window.GameOfLifeBoard = GameOfLifeBoard;
+  window.GameOfLifeText = GameOfLifeText;
 
 }).call(this);
