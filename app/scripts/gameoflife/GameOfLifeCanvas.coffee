@@ -5,7 +5,7 @@ class GameOfLifeCanvas extends GameOfLifeBoard
 
   colors :
     dead  : '#000'
-    alive : '#fff'
+    alive : '#6f6'
 
   init : (args = {})->
     @grid  = new GameOfLifeGrid
