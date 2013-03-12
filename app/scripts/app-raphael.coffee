@@ -6,8 +6,6 @@ $ ()->
     width  : 25
     node   : $ "#gameoflife"
 
-  window.board = board
-
   board.randomize()
 
   run = ()->
