@@ -2,7 +2,7 @@ class GameOfLifeRaphael extends GameOfLifeBoard
 
   cells  : []
   size   : 12
-  radius : 5
+  radius : 6
 
   colors :
     'dead'  : '#333'
