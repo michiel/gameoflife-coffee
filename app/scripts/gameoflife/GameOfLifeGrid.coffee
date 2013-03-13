@@ -53,8 +53,8 @@ class GameOfLifeGrid
 
     count = 0
 
-    `for (var i=-1;i<2;i++) {
-      for (var j=-1;j<2;j++) {
+    `for (var i=-1;i<=1;i++) {
+      for (var j=-1;j<=1;j++) {
         if (!(i == 0 && j == 0)) {
           if (cellStatus(x+i, y+j) === 'alive') {
             count++;
