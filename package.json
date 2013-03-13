@@ -19,6 +19,6 @@
     "yeoman" : "~0.9.1"
   },
   "scripts" : {
-    "test" : "node_modules/.bin/yeoman coffee ; node_modules/.bin/yeoman test --verbose"
+    "test" : "export yeoman_test=true ; node_modules/.bin/yeoman coffee ; node_modules/.bin/yeoman test --verbose"
   }
 }
