@@ -1,6 +1,6 @@
 {
   "name"        : "gameoflife-coffee",
-  "description" : "yeoman example app to test with Travis CI",
+  "description" : "Conway's Game of Life in CoffeeScript"
   "author"      : {
     "name"  : "Michiel Kalkman",
     "email" : "michielkalkman@gmail.com"
