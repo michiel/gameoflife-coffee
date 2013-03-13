@@ -46,6 +46,14 @@
       "level": "ignore",
       "message": "Backticks are forbidden"
     },
+    "no_empty_param_list": {
+      "level": "warn",
+      "message": "Empty params ()->, use ->"
+    },
+    "no_standalone_at": {
+      "level": "warn",
+      "message": "Standalone @ references discouraged"
+    },
     "line_endings": {
       "level": "warn",
       "value": "unix",
