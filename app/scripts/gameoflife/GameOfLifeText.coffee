@@ -5,7 +5,7 @@ class GameOfLifeText extends GameOfLifeBoard
   _print : (str)->
     @_boardBuffer += str
 
-  printBoard : ()->
+  render : ()->
     width  = [0..@grid.width+1]
     height = [0..@grid.height-1]
     board  = @grid.grid

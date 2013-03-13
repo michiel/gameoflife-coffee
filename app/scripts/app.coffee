@@ -7,7 +7,7 @@ $ ()->
   board.randomize()
 
   run = ()->
-    board.printBoard()
+    board.render()
     board.cycle()
 
     $("#gameoflife").html "<pre>#{board._boardBuffer}</pre>"

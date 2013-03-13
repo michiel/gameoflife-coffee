@@ -18,7 +18,7 @@ class GameOfLifeRaphael extends GameOfLifeBoard
           @radius
         circle.attr 'stroke', '#000'
 
-  printBoard : ()->
+  render : ()->
     @grid.grid.forEach (row, x)=>
       row.forEach (val, y)=>
         @cells[x][y].animate

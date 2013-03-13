@@ -10,7 +10,7 @@ $ ()->
   board.randomize()
 
   run = ()->
-    board.printBoard()
+    board.render()
     board.cycle()
     setTimeout run, 200
 
