@@ -4,6 +4,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   GameOfLifeRaphael = (function(_super) {
+    var cells, colors, paper;
 
     __extends(GameOfLifeRaphael, _super);
 
@@ -11,9 +12,15 @@
       return GameOfLifeRaphael.__super__.constructor.apply(this, arguments);
     }
 
-    GameOfLifeRaphael.prototype.cells = [];
+    GameOfLifeRaphael.prototype.size = 12;
 
-    GameOfLifeRaphael.prototype.colors = {
+    GameOfLifeRaphael.prototype.radius = 6;
+
+    paper = null;
+
+    cells = [];
+
+    colors = {
       'dead': '#333',
       'alive': '#6f6'
     };
@@ -23,22 +30,23 @@
       if (args == null) {
         args = {};
       }
-      this.paper = Raphael("gameoflife", 200, 200);
-      return this.cells = this.grid.grid.map(function(row, x) {
+      paper = Raphael(this.$node[0], this.height + this.radius, this.width + this.radius);
+      return cells = this.grid.grid.map(function(row, x) {
         return row.map(function(val, y) {
-          return _this.paper.circle(x * 5, y * 5, 2);
+          var circle;
+          circle = paper.circle(x * _this.size + _this.radius, y * _this.size + _this.radius, _this.radius);
+          return circle.attr('stroke', '#000');
         });
       });
     };
 
-    GameOfLifeRaphael.prototype.printBoard = function() {
+    GameOfLifeRaphael.prototype.render = function() {
       var _this = this;
       return this.grid.grid.forEach(function(row, x) {
         return row.forEach(function(val, y) {
-          return _this.cells[x][y].animate({
-            'fill': _this.colors[val],
-            'stroke': "#000"
-          }, 300);
+          return cells[x][y].animate({
+            'fill': colors[val]
+          }, 200);
         });
       });
     };

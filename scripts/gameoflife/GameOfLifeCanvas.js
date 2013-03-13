@@ -4,6 +4,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   GameOfLifeCanvas = (function(_super) {
+    var ctxt;
 
     __extends(GameOfLifeCanvas, _super);
 
@@ -13,12 +14,12 @@
 
     GameOfLifeCanvas.prototype.cellSize = 3;
 
-    GameOfLifeCanvas.prototype.ctxt = null;
-
     GameOfLifeCanvas.prototype.colors = {
       dead: '#000',
-      alive: '#fff'
+      alive: '#6f6'
     };
+
+    ctxt = null;
 
     GameOfLifeCanvas.prototype.init = function(args) {
       if (args == null) {
@@ -28,10 +29,10 @@
         height: Math.floor(this.$node.height() / this.cellSize),
         width: Math.floor(this.$node.width() / this.cellSize)
       });
-      return this.ctxt = this.$node[0].getContext('2d');
+      return ctxt = this.$node[0].getContext('2d');
     };
 
-    GameOfLifeCanvas.prototype.printBoard = function() {
+    GameOfLifeCanvas.prototype.render = function() {
       var _this = this;
       return this.grid.grid.forEach(function(row, x) {
         return row.forEach(function(val, y) {
@@ -41,8 +42,8 @@
     };
 
     GameOfLifeCanvas.prototype.cell = function(x, y, size, color) {
-      this.ctxt.fillStyle = color;
-      return this.ctxt.fillRect(x, y, x + size, y + size);
+      ctxt.fillStyle = color;
+      return ctxt.fillRect(x, y, x + size, y + size);
     };
 
     return GameOfLifeCanvas;

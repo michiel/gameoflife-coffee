@@ -17,7 +17,7 @@
       return this._boardBuffer += str;
     };
 
-    GameOfLifeText.prototype.printBoard = function() {
+    GameOfLifeText.prototype.render = function() {
       var board, height, width, _i, _j, _ref, _ref1, _results, _results1,
         _this = this;
       width = (function() {

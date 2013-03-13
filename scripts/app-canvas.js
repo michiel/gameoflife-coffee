@@ -10,7 +10,7 @@
     window.board = board;
     board.randomize();
     run = function() {
-      board.printBoard();
+      board.render();
       board.cycle();
       return setTimeout(run, 200);
     };

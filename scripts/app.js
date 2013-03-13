@@ -8,11 +8,12 @@
     });
     board.randomize();
     run = function() {
-      board.printBoard();
+      board.render();
       board.cycle();
-      return $("#gameoflife").html("<pre>" + board._boardBuffer + "</pre>");
+      $("#gameoflife").html("<pre>" + board._boardBuffer + "</pre>");
+      return setTimeout(run, 200);
     };
-    return setInterval(run, 200);
+    return run();
   });
 
 }).call(this);

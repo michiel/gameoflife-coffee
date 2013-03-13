@@ -4,15 +4,14 @@
     var board, run;
     board = new GameOfLifeRaphael({
       height: 50,
-      width: 50,
+      width: 25,
       node: $("#gameoflife")
     });
-    window.board = board;
     board.randomize();
     run = function() {
-      board.printBoard();
+      board.render();
       board.cycle();
-      return setTimeout(run, 300);
+      return setTimeout(run, 500);
     };
     return run();
   });

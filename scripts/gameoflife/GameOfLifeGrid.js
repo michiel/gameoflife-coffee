@@ -47,40 +47,36 @@
       });
     };
 
-    GameOfLifeGrid.prototype._cellStatus = function(x, y) {
-      if (x === -1) {
-        x = this.height - 1;
-      } else if (x === this.height) {
-        x = 0;
+    GameOfLifeGrid.prototype._neighbours = function(x, y) {
+      var cellStatus, count, grid, height, width,
+        _this = this;
+      height = this.height;
+      width = this.width;
+      grid = this.lastGrid;
+      cellStatus = function(x, y) {
+        if (x === -1) {
+          x = height - 1;
+        } else if (x === height) {
+          x = 0;
+        }
+        if (y === -1) {
+          y = width - 1;
+        } else if (y === width) {
+          y = 0;
+        }
+        return grid[x][y];
+      };
+      count = 0;
+      for (var i=-1;i<2;i++) {
+      for (var j=-1;j<2;j++) {
+        if (!(i == 0 && j == 0)) {
+          if (cellStatus(x+i, y+j) === 'alive') {
+            count++;
+          }
+        }
       }
-      if (y === -1) {
-        y = this.width - 1;
-      } else if (y === this.width) {
-        y = 0;
-      }
-      return this.lastGrid[x][y];
     };
 
-    GameOfLifeGrid.prototype._neighbours = function(x, y) {
-      var count, range,
-        _this = this;
-      count = {
-        dead: 0,
-        alive: 0
-      };
-      range = [-1, 0, 1];
-      range.forEach(function(i) {
-        return range.forEach(function(j) {
-          if (!(i === 0 && j === i)) {
-            switch (_this._cellStatus(x + i, y + j)) {
-              case 'alive':
-                return count.alive++;
-              case 'dead':
-                return count.dead++;
-            }
-          }
-        });
-      });
       return count;
     };
 
@@ -88,18 +84,16 @@
       var _this = this;
       return (this.lastGrid = this.cloneGrid(this.grid)).forEach(function(column, x) {
         return column.forEach(function(row, y) {
-          var locals;
-          locals = _this._neighbours(x, y);
-          switch (_this.lastGrid[x][y]) {
-            case 'alive':
-              if (locals.alive < 2 || locals.alive > 3) {
-                return _this.grid[x][y] = 'dead';
-              }
-              break;
-            case 'dead':
-              if (locals.alive === 3) {
-                return _this.grid[x][y] = 'alive';
-              }
+          var alive;
+          alive = _this._neighbours(x, y);
+          if (_this.lastGrid[x][y] === 'alive') {
+            if (alive < 2 || alive > 3) {
+              return _this.grid[x][y] = 'dead';
+            }
+          } else {
+            if (alive === 3) {
+              return _this.grid[x][y] = 'alive';
+            }
           }
         });
       });
