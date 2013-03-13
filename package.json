@@ -13,7 +13,7 @@
   "bugs" : {
     "url" : "https://github.com/michiel/gameoflife-coffee/issues"
   },
-  "version"         : "0.0.1",
+  "version"         : "0.0.2",
   "dependencies"    : { },
   "devDependencies" : {
     "yeoman" : "~0.9.1"
