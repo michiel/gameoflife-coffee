@@ -2,14 +2,21 @@
 
 # Game of Life
 
-Conway's Game of Life in CoffeeScript with various frontends (text, Canvas and
-RaphaelJS so far) and tests.
+Conway's Game of Life in CoffeeScript.
 
-Very much a work in progress
+The game grid has an implementation that is separate from the rendering
+implementations. It's tested using mocha/chai and PhantomJS with some npm
+configuration to have the tests run on TravisCI.
+
+The gh-pages branch has a semi-built copy of the project that lags behind the
+master branch and can be found online
+[here](http://michiel.github.com/gameoflife-coffee).
 
 You can find a text demo running [here](http://michiel.github.com/gameoflife-coffee),
 a canvas board running [here](http://michiel.github.com/gameoflife-coffee/index-canvas.html) and a 
 RaphaelJS board [here](http://michiel.github.com/gameoflife-coffee/index-raphael.html)
+
+To get up and running, use node/npm and install yeoman and grunt
 
 Use yeoman / grunt to build
 
