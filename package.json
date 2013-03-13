@@ -1,0 +1,24 @@
+{
+  "name"        : "gameoflife-coffee",
+  "description" : "yeoman example app to test with Travis CI",
+  "author"      : {
+    "name"  : "Michiel Kalkman",
+    "email" : "michielkalkman@gmail.com"
+  },
+  "homepage"   : "https://github.com/michiel/gameoflife-coffee",
+  "repository" : {
+    "type" : "git",
+    "url"  : "git://github.com/michiel/gameoflife-coffee.git"
+  },
+  "bugs" : {
+    "url" : "https://github.com/michiel/gameoflife-coffee/issues"
+  },
+  "version"         : "0.0.1",
+  "dependencies"    : { },
+  "devDependencies" : {
+    "yeoman" : "~0.9.1"
+  },
+  "scripts" : {
+    "test" : "node_modules/.bin/yeoman test --verbose"
+  }
+}
