@@ -5,14 +5,14 @@ class GameOfLifeText extends GameOfLifeBoard
   _print : (str)->
     @_boardBuffer += str
 
-  render : ()->
+  render : ->
     width  = [0..@grid.width+1]
     height = [0..@grid.height-1]
     board  = @grid.grid
 
     @_boardBuffer = ""
 
-    width.forEach ()=>
+    width.forEach =>
       @_print "-"
 
     @_print "\n"
@@ -26,7 +26,7 @@ class GameOfLifeText extends GameOfLifeBoard
           @_print "."
       @_print "|\n"
 
-    width.forEach ()=>
+    width.forEach =>
       @_print "-"
 
     @_print "\n"

@@ -1,4 +1,4 @@
-$ ()->
+$ ->
 
   board = new GameOfLifeText
     height : 35
@@ -6,7 +6,7 @@ $ ()->
 
   board.randomize()
 
-  run = ()->
+  run = ->
     board.render()
     board.cycle()
 

@@ -1,5 +1,4 @@
-
-$ ()->
+$ ->
 
   board = new GameOfLifeRaphael
     height : 50
@@ -8,7 +7,7 @@ $ ()->
 
   board.randomize()
 
-  run = ()->
+  run = ->
     board.render()
     board.cycle()
     setTimeout run, 500

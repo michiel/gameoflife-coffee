@@ -11,7 +11,7 @@ class GameOfLifeGrid
     else
       @grid = @initGrid()
 
-  initGrid : ()->
+  initGrid : ->
     [1..@height].map =>
       [1..@width].map =>
         'dead'
@@ -65,7 +65,7 @@ class GameOfLifeGrid
 
     count
 
-  _cycle : ()->
+  _cycle : ->
     (@lastGrid = @cloneGrid @grid).forEach (column, x)=>
       column.forEach (row, y)=>
         alive = @_neighbours x, y
@@ -76,15 +76,15 @@ class GameOfLifeGrid
           if alive is 3
             @grid[x][y] = 'alive'
 
-  randomize : ()->
+  randomize : ->
     @grid = @grid.map (row)->
-      row.map ()->
+      row.map ->
         if Math.floor((Math.random() * 10)) % 3 is 0
           'alive'
         else
           'dead'
 
-  cycle : ()->
+  cycle : ->
     @_cycle()
 
 

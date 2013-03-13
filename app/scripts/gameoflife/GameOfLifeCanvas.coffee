@@ -15,7 +15,7 @@ class GameOfLifeCanvas extends GameOfLifeBoard
 
     ctxt = @$node[0].getContext '2d'
 
-  render : ()->
+  render : ->
     @grid.grid.forEach (row, x)=>
       row.forEach (val, y)=>
         @cell x * @cellSize , y * @cellSize, 3, @colors[val]

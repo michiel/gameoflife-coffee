@@ -7,10 +7,10 @@ class GameOfLifeBoard
       
   init : (args = {})->
 
-  cycle : ()->
+  cycle : ->
     @grid.cycle()
 
-  randomize : ()->
+  randomize : ->
     @grid.randomize()
 
 
