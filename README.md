@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/michiel/gameoflife-coffee.png)](https://travis-ci.org/michiel/gameoflife-coffee)
+
 # Game of Life
 
 Conway's Game of Life in CoffeeScript with various frontends (text, Canvas and
