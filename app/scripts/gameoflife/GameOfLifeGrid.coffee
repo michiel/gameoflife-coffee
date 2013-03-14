@@ -45,15 +45,15 @@ class GameOfLifeGrid
 
       grid[x][y]
 
-    count = 0
+    living = 0
 
     for i in [-1..1]
       for j in [-1..1]
         if not (i is 0 and j is 0)
           if cellStatus(x+i, y+j) is 'alive'
-            count++
+            living++
 
-    count
+    living
 
   _cycle : ->
     (@lastGrid = @cloneGrid @grid).forEach (column, x)=>
