@@ -21,36 +21,27 @@ class GameOfLifeGrid
       col.map (val) ->
         val
 
+  cellStatus : (x, y)->
+    if x is -1
+      x = @height - 1
+    else if x is @height
+      x = 0
+
+    if y is -1
+      y = @width - 1
+    else if y is @width
+      y = 0
+
+    @lastGrid[x][y]
+
   _neighbours : (x, y)->
-
-    #
-    # Inline the cellStatus() function for performance
-    # Mostly for placing this vars in manageable scope
-    #
-
-    height = @height
-    width  = @width
-    grid   = @lastGrid
-
-    cellStatus = (x, y)=>
-      if x is -1
-        x = height - 1
-      else if x is height
-        x = 0
-
-      if y is -1
-        y = width - 1
-      else if y is width
-        y = 0
-
-      grid[x][y]
 
     living = 0
 
     for i in [-1..1]
       for j in [-1..1]
         if not (i is 0 and j is 0)
-          if cellStatus(x+i, y+j) is 'alive'
+          if @cellStatus(x+i, y+j) is 'alive'
             living++
 
     living
