@@ -26,7 +26,6 @@ class GameOfLifeGrid
     #
     # Inline the cellStatus() function for performance
     # Mostly for placing this vars in manageable scope
-    # TODO : additionale measurement
     #
 
     height = @height
@@ -46,22 +45,13 @@ class GameOfLifeGrid
 
       grid[x][y]
 
-    #
-    # Inline JS for speed - All CS loops/iterations require new function
-    # scopes and those are seriously _expensive_
-    #
-
     count = 0
 
-    `for (var i=-1;i<=1;i++) {
-      for (var j=-1;j<=1;j++) {
-        if (!(i == 0 && j == 0)) {
-          if (cellStatus(x+i, y+j) === 'alive') {
-            count++;
-          }
-        }
-      }
-    }`
+    for i in [-1..1]
+      for j in [-1..1]
+        if not (i is 0 and j is 0)
+          if cellStatus(x+i, y+j) is 'alive'
+            count++
 
     count
 
