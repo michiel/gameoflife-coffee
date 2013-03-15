@@ -17,9 +17,9 @@ class GameOfLifeText extends GameOfLifeBoard
 
     @_print "\n"
 
-    board.forEach (val, i)=>
+    board.forEach (row)=>
       @_print "|"
-      board[i].forEach (val, j)=>
+      row.forEach (val)=>
         if val is "alive"
           @_print "X"
         else
