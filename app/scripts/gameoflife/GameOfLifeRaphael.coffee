@@ -28,4 +28,4 @@ class GameOfLifeRaphael extends GameOfLifeBoard
         , 200
 
 
-window.GameOfLifeRaphael = GameOfLifeRaphael
+(exports ? this).GameOfLifeRaphael = GameOfLifeRaphael

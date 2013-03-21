@@ -25,4 +25,4 @@ class GameOfLifeCanvas extends GameOfLifeBoard
     ctxt.fillRect(x, y, x+size, y+size)
 
 
-window.GameOfLifeCanvas = GameOfLifeCanvas
+(exports ? this).GameOfLifeCanvas = GameOfLifeCanvas

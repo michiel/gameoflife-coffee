@@ -69,4 +69,4 @@ class GameOfLifeGrid
     @_cycle()
 
 
-window.GameOfLifeGrid = GameOfLifeGrid
+(exports ? this).GameOfLifeGrid = GameOfLifeGrid

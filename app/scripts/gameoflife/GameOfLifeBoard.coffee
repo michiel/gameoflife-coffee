@@ -14,4 +14,4 @@ class GameOfLifeBoard
     @grid.randomize()
 
 
-window.GameOfLifeBoard = GameOfLifeBoard
+(exports ? this).GameOfLifeBoard = GameOfLifeBoard

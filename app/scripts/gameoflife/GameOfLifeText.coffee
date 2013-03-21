@@ -32,4 +32,4 @@ class GameOfLifeText extends GameOfLifeBoard
     @_print "\n"
 
 
-window.GameOfLifeText = GameOfLifeText
+(exports ? this).GameOfLifeText = GameOfLifeText
