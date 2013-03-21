@@ -30,6 +30,7 @@
       if (args == null) {
         args = {};
       }
+      GameOfLifeRaphael.__super__.init.call(this, args);
       paper = Raphael(this.$node[0], this.height + this.radius, this.width + this.radius);
       return cells = this.grid.grid.map(function(row, x) {
         return row.map(function(val, y) {
