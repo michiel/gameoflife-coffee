@@ -10,6 +10,7 @@ class GameOfLifeRaphael extends GameOfLifeBoard
     'alive' : '#6f6'
   
   init : (args={})->
+    super args
     paper = Raphael @$node[0], @height + @radius, @width + @radius
 
     cells = @grid.grid.map (row, x)=>
