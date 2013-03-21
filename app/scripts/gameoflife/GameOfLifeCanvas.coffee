@@ -18,7 +18,7 @@ class GameOfLifeCanvas extends GameOfLifeBoard
   render : ->
     @grid.grid.forEach (row, x)=>
       row.forEach (val, y)=>
-        @cell x * @cellSize , y * @cellSize, 3, @colors[val]
+        @cell x * @cellSize , y * @cellSize, @cellSize, @colors[val]
 
   cell : (x, y, size, color)->
     ctxt.fillStyle = color
