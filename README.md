@@ -26,3 +26,7 @@ Use yeoman / grunt to build
 
 Wikipedia has a nice [entry on Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/michiel/gameoflife-coffee/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
